@@ -1,0 +1,6 @@
+"0",""
+"0",""
+"0","mpg %>% "
+"0","  ggplot(aes(x = forcats::fct_infreq(manufacturer))) +"
+"0","  geom_bar() +"
+"0","  coord_flip()"

@@ -1,0 +1,217 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
+library(tidyverse)
+library(tidymodels)
+library(ggplot2)
+library(visdat)
+library(corrplot)
+library(discrim)
+library(klaR)
+library(yardstick)
+library(rlang)
+
+
+
+
+
+```
+
+
+
+
+```{r}
+
+mpg %>% 
+  ggplot(aes(x = hwy)) +
+  geom_histogram()
+
+
+
+```
+
+
+
+```{r}
+
+
+
+mpg %>% 
+  ggplot(aes(x = hwy)) +
+  geom_histogram()
+
+
+mpg %>% 
+  ggplot(aes(x = hwy, y = cty)) +
+  geom_point() +
+  geom_jitter()
+
+```
+
+
+
+
+
+
+
+```{r}
+
+
+mpg %>% 
+  ggplot(aes(x = forcats::fct_infreq(manufacturer))) +
+  geom_bar() +
+  coord_flip()
+
+
+
+```
+
+
+```{r}
+
+
+mpg %>% 
+  ggplot(aes(x = hwy, y = factor(cyl))) +
+  geom_boxplot() +
+  xlab("Highway Mileage") +
+  ylab("Cylinders")
+
+```
+
+
+
+
+
+```{r}
+
+read.csv("train.csv")
+
+read.csv("test.csv")
+
+
+```
+
+
+
+
+
+```{r}
+
+mpg %>%
+  ggplot() +
+  geom_boxplot(mapping = aes(x = class, y = hwy)) +
+  geom_jitter(mapping = aes(x = class, y = hwy),
+              alpha = 0.25, height=0) +
+  
+  labs(x = "vehicle class", y = "Highway Mpg") +
+  coord_flip()
+
+
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```{r}
+
+setwd("/Users/jaeinshin/Desktop/PSTAT131")
+
+
+
+```
+
+
+```{r}
+abalone <- read.csv("abalone.csv")
+abalone
+
+
+abalone <- abalone %>%
+  mutate(age = rings + 1.5)
+
+abalone
+
+abalone %>%
+  ggplot(aes(x=age)) + geom_histogram()
+  
+  
+  
+  
+  
+
+```
+
+
+```{r}
+set.seed(3435)
+
+abalone_split <- abalone %>% 
+  initial_split(strata = age, prop = 0.70)
+
+abalone_train <- training(abalone_split)
+abalone_test <- testing(abalone_split )
+
+
+
+abalone_train
+```
+
+
+
+```{r}
+
+
+abalone_recipe <- recipe(age ~. , data = abalone_train) %>%
+  step_rm(rings) %>%
+  step_dummy(all_nominal_predictors()) %>%
+
+
+
+
+abalone_train
+  
+```
+
+
+```{r}
+
+getwd()
+setwd("/Users/jaeinshin/Desktop/PSTAT131/walmart")
+
+feature <- read.csv("features.csv")
+feature
+
+train <- read.csv("train.csv")
+train
+
+```
+
+
+
+
+
+
+
+
+

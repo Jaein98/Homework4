@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1651269856920.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2179185368",
+    "id" : "1C23C48",
+    "lastKnownWriteTime" : 1612327332,
+    "last_content_update" : 1612327332,
+    "path" : "~/Downloads/homework-2 2/data/abalone.csv",
+    "project_path" : null,
+    "properties" : {
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "text"
+}

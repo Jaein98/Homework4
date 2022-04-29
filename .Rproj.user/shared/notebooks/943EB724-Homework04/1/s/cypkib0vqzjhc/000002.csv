@@ -1,0 +1,8 @@
+"0","#Recipe"
+"0","titanic_recipe = recipe(survived ~ pclass + sex + age + sib_sp + parch + fare, "
+"0","                        data = data_train) %>%"
+"0","        step_impute_linear(age) %>%"
+"0","        step_dummy(all_nominal_predictors()) %>%"
+"0","        step_interact(terms = ~ starts_with(""sex""):fare + age:fare)"
+"2","Error in is_tibble(data) : object 'data_train' not found
+"

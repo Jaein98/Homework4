@@ -1,0 +1,5 @@
+"0",""
+"0","log_acc = augment(log_fit, new_data = titanic_test) %>%"
+"0","  accuracy(truth = survived, estimate = .pred_class)"
+"0",""
+"0","log_acc"
