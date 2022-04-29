@@ -14,9 +14,6 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE,
 ```
 
 
-
-
-
 ```{r}
 
 library(tidyverse)
@@ -29,7 +26,7 @@ library(klaR)
 library(yardstick)
 library(rlang)
 
-set.seed(580)
+set.seed(589)
 data = read.csv('data/titanic.csv')
 data$survived = factor(data$survived, levels = c('Yes', 'No'))
 data$pclass = factor(data$pclass)

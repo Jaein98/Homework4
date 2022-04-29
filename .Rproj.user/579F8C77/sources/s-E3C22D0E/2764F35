@@ -5,16 +5,16 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "0",
+    "hash" : "2172669422",
     "id" : "2764F35",
-    "lastKnownWriteTime" : 1651272759,
-    "last_content_update" : 1651272759678,
+    "lastKnownWriteTime" : 1651273154,
+    "last_content_update" : 1651273154246,
     "path" : "~/Desktop/PSTAT131/Homework4/homework-4.Rmd",
     "project_path" : "homework-4.Rmd",
     "properties" : {
-        "cursorPosition" : "23,16",
+        "cursorPosition" : "28,12",
         "last_setup_crc32" : "E3C22D0E3acac44b",
-        "scrollLine" : "15"
+        "scrollLine" : "22"
     },
     "read_only" : false,
     "read_only_alternatives" : [
