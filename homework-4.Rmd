@@ -207,7 +207,7 @@ Finally, with your fitted model, use `predict()`, `bind_cols()`, and `accuracy()
 
 Compare your model’s testing accuracy to its average accuracy across folds. Describe what you see.
 
-
+log_reg accuracy is bigger than lda and qda. 
 
 ```{r}
 bound_train_data = bind_cols(predict(log_fit, new_data = titanic_train, type = "class"),
