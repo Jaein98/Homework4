@@ -27,12 +27,11 @@ library(yardstick)
 library(rlang)
 
 set.seed(589)
-data = read.csv('data/titanic.csv')
+data = read.csv('titanic.csv')
 data$survived = factor(data$survived, levels = c('Yes', 'No'))
 data$pclass = factor(data$pclass)
-data
-```
 
+```
 
 
 
@@ -211,14 +210,48 @@ Compare your model’s testing accuracy to its average accuracy across folds. De
 
 
 ```{r}
-predict(log_fit, new_data = titanic_test, type = "prob")
+bound_train_data = bind_cols(predict(log_fit, new_data = titanic_train, type = "class"),
+                             predict(lda_fit, new_data = titanic_train, type = "class"),
+                             predict(qda_fit, new_data = titanic_train, type = "class"))
+                             
 
-log_acc = augment(log_fit, new_data = titanic_test) %>%
+colnames(bound_train_data) = c("Log fit", "LDA fit", "QDA fit", "True")
+
+log_reg_acc <- augment(log_fit, new_data = titanic_train) %>%
   accuracy(truth = survived, estimate = .pred_class)
 
-log_acc
 
+lda_acc <- augment(lda_fit, new_data = titanic_train) %>%
+  accuracy(truth = survived, estimate = .pred_class)
+
+
+qda_acc <- augment(qda_fit, new_data = titanic_train) %>%
+  accuracy(truth = survived, estimate = .pred_class)
+
+log_reg_acc
+lda_acc
+qda_acc
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
